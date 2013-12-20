@@ -1,4 +1,10 @@
 <?php
+/**
+ * Implements hook_init().
+ */
+function ding_facetbrowser_init() {
+  drupal_add_library('system', 'ui.widget');
+}
 
 /**
  * Implements hook_block_info().
