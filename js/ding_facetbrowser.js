@@ -67,13 +67,13 @@ Drupal.behaviors.ding_facetbrowser = {
 
     // Check for click in checkbox, and execute search.
     fact_browsers.find('.form-type-checkbox input').change(function(e) {
-      Drupal.TingSearchOverlay();
+      $('<div class="facetbrowser_overlay"><div class="spinner"></div></div>').prependTo('body');
       window.location = $(e.target).parent().find('a').attr('href');
     });
 
     // Check facet links for click events.
     fact_browsers.find('.form-type-checkbox a').click(function(e) {
-      Drupal.TingSearchOverlay();
+      $('<div class="facetbrowser_overlay"><div class="spinner"></div></div>').prependTo('body');
     });
   }
 };
@@ -179,7 +179,7 @@ function ding_facetbrowser_fold_facet_group() {
       var facetMatch = element.find('a').attr('href').match(/&facets\[\]=-facet.*/);
       checkedFacets += facetMatch[0];
       if (checkedFacets) {
-        Drupal.TingSearchOverlay();
+        $('<div class="facetbrowser_overlay"><div class="spinner"></div></div>').prependTo('body');
         window.location.href += checkedFacets;
       }
     });
