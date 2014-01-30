@@ -59,7 +59,7 @@
 	
 	if( clickedKey.id == 'expand_less' ){
 	    if( !(facetGroup.find('#expand_more').length) ) {	
-		facetGroup.append('<a class="expand" id="expand_more expand-more">' + Drupal.t('Vis flere') + '</a>');
+		facetGroup.append('<a class="expand expand-more" id="expand_more">' + Drupal.t('Vis flere') + '</a>');
 	    }
 	}
     });
