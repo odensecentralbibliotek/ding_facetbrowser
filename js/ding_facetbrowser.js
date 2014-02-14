@@ -43,12 +43,12 @@ Drupal.behaviors.ding_facetbrowser = {
         wrapper.toggle('fast', function () {
           var cookie = 0;
           if (self.hasClass('expand-more')) {
-            show_more_groups.text(Drupal.t('Show less filters'));
+            show_more_groups.text(Drupal.t('Show more filters'));
             show_more_groups.removeClass('expand-more').addClass('expand-less');
             cookie = 1;
           }
           else {
-            show_more_groups.text(Drupal.t('Show more filters'));
+            show_more_groups.text(Drupal.t('Show less filters'));
             show_more_groups.removeClass('expand-less').addClass('expand-more');
           }
 
@@ -189,5 +189,3 @@ function ding_facetbrowser_fold_facet_group() {
 };
 
 })(jQuery);
-
-
