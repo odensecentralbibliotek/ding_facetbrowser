@@ -98,7 +98,7 @@ function ding_facetbrowser_fold_facet_group() {
 
     // Add expand button, if there are more to show.
     if (terms_not_checked.length > number_of_terms) {
-      facetGroup.append('<a href="javascript:void;" class="expand expand-more" id="expand_more">' + Drupal.t('Show more') + '</a>');
+      facetGroup.append('<a href="javascript:void;" class="expand expand-less" id="expand_more">' + Drupal.t('Show more') + '</a>');
     }
 
     // Add some classes to checkbox wrappers.
@@ -131,7 +131,7 @@ function ding_facetbrowser_fold_facet_group() {
           if (facetGroup.find('.form-type-checkbox.unselected-checkbox:visible').size() >= Drupal.settings.ding_facetbrowser.number_of_terms &&
               facetGroup.find('#expand_less').size() === 0 &&
               count % Drupal.settings.ding_facetbrowser.number_of_terms === 0) {
-            facetGroup.append('<a href="javascript:void;" class="expand expand-less" id="expand_less">' + Drupal.t('Show less') + '</a>');
+            facetGroup.append('<a href="javascript:void;" class="expand expand-more" id="expand_less">' + Drupal.t('Show less') + '</a>');
           }
         });
       }
