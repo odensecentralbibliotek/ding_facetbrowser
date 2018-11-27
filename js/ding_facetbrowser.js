@@ -6,12 +6,14 @@
 
 Drupal.behaviors.ding_facetbrowser = {
   attach: function(context, settings) {
-    // Fold facet groups as default.
-    ding_facetbrowser_fold_facet_group();
-
     // Select the fact browser(s) HTML element.
     var fact_browsers = $(Drupal.settings.ding_facetbrowser.selector);
-
+    if($(fact_browsers).find(".expand").length != 0)
+    {
+        return;
+    }
+    // Fold facet groups as default.
+    ding_facetbrowser_fold_facet_group();
     // Hide extra facet groups (groups that have js-hidden class).
     fact_browsers.each(function(index, facet_browser) {
       // Create show more link.
@@ -82,9 +84,14 @@ Drupal.behaviors.ding_facetbrowser = {
  * Fold facet groups to show only x unselected checkboxes per group.
  */
 function ding_facetbrowser_fold_facet_group() {
+    debugger;
+    
   // Select the fact browser HTML element.
   var fact_browser = $(Drupal.settings.ding_facetbrowser.selector);
-
+    if($(fact_browser).find(".expand").length != 0)
+    {
+        return;
+    }
   // Add show more button to each facet group and hide some terms.
   fact_browser.find('fieldset.form-wrapper').each(function() {
     var facetGroup = $(this);
@@ -120,6 +127,7 @@ function ding_facetbrowser_fold_facet_group() {
    * Bind click function to show more and show less links.
    */
   fact_browser.find('.expand').live('click', function(e) {
+      debugger;
     e.preventDefault();
 
     var clickedKey = this;
@@ -165,6 +173,7 @@ function ding_facetbrowser_fold_facet_group() {
    * Bind click function to the un-select all selected checkboxes link.
    */
   fact_browser.find('.unselect').live('click', function(e) {
+      debugger;
     e.preventDefault();
 
     var clickedKey = this;
